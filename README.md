@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: <customize name>
         id: <customize id>
-        uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0.5
+        uses: tcarac/trigger-circleci-pipeline-action@v1.0.5
         env:
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
 ```
@@ -53,12 +53,17 @@ jobs:
 
 4. Use the Pipeline Parameter data to run [workflows conditionally](https://circleci.com/docs/2.0/pipeline-variables/#conditional-workflows).
 
-   **_See: [Examples](https://github.com/CircleCI-Public/trigger-circleci-pipeline-action/tree/main/examples)_**
+   **_See: [Examples](https://github.com/tcarac/trigger-circleci-pipeline-action/tree/main/examples)_**
 
 # Inputs
 
 Optional [input parameters](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs) that allow you to specify additional metadata.
 
+### PR_Headref
+
+**required:** false
+
+**description**: An optional parameter to specify the branch to use on the CircleCI pipeline.
 ### GHA_Meta
 
 **required:** false
@@ -72,10 +77,11 @@ jobs:
     steps:
       - name: <customize name>
         id: <customize id>
-        uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0.5
+        uses: tcarac/trigger-circleci-pipeline-action@v1.0.5
         with:
           GHA_Meta: "<custom data>"
         env:
+          PR_headref: my_branch
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
 ```
 
