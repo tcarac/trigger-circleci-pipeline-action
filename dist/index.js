@@ -13335,7 +13335,7 @@ const body = {
 };
 
 const tag = getTag();
-const branch = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('PR_Headref') ||  getBranch();
+const branch = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)("PR_Headref") || getBranch();
 
 if (tag) {
   Object.assign(body, { tag });

@@ -54,7 +54,7 @@ const body = {
 };
 
 const tag = getTag();
-const branch = getInput('PR_Headref') ||  getBranch();
+const branch = getInput("PR_Headref") || getBranch();
 
 if (tag) {
   Object.assign(body, { tag });
